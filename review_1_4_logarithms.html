@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-4 常用對數與科學記號 - 課後復習與考前衝刺</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen pb-20">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-indigo-900 to-slate-900 text-white py-10 px-4 border-b-4 border-indigo-500 shadow-xl">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="bg-indigo-500 text-slate-950 font-black px-3 py-1 rounded text-xs uppercase tracking-wider">SOP 階段五：課後獨立復習</span>
+                <span class="bg-indigo-950 text-indigo-200 px-3 py-1 rounded text-xs border border-indigo-700">總測驗 & 心智圖整理</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white">1-4 常用對數與科學記號（課後總復習）</h1>
+            <p class="mt-3 text-indigo-200 text-base md:text-lg">觀念心智圖 ➔ 四大易錯盲點 ➔ 5 題課後衝刺小測驗</p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 mt-10 space-y-12">
+
+        <!-- 區塊一：觀念心智圖 -->
+        <section class="bg-slate-800 rounded-2xl p-6 md:p-8 border border-slate-700 shadow-lg">
+            <div class="flex items-center space-x-3 mb-6 border-b border-slate-700 pb-4">
+                <span class="p-3 bg-indigo-500/20 text-indigo-400 rounded-xl font-bold text-xl">🧠</span>
+                <div>
+                    <h2 class="text-2xl font-black text-white">單元核心觀念心智圖 (Concept Map)</h2>
+                    <p class="text-xs text-slate-400">快速掌握常用對數三大核心觀念</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900/80 p-5 rounded-xl border-t-4 border-sky-400">
+                    <span class="text-xs font-bold text-sky-400 uppercase tracking-widest block mb-2">Branch 01</span>
+                    <h3 class="text-lg font-bold text-white mb-3">常用對數與真數條件</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 leading-relaxed">
+                        <li>• <strong class="text-sky-300">定義</strong>：$10^x = p \iff x = \log p$。</li>
+                        <li>• <strong class="text-sky-300">真數限制</strong>：真數必須嚴格滿足 <strong class="text-rose-400">$p > 0$</strong>。</li>
+                        <li>• <strong class="text-sky-300">恆等式</strong>：$10^{\log p} = p, \quad \log 10^a = a$。</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900/80 p-5 rounded-xl border-t-4 border-indigo-400">
+                    <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest block mb-2">Branch 02</span>
+                    <h3 class="text-lg font-bold text-white mb-3">對數律與估算值</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 leading-relaxed">
+                        <li>• <strong class="text-indigo-300">加減與乘除</strong>：$\log M + \log N = \log(MN)$，$\log M - \log N = \log(M/N)$。</li>
+                        <li>• <strong class="text-indigo-300">次方提至前方</strong>：$\log(M^k) = k \cdot \log M$。</li>
+                        <li>• <strong class="text-indigo-300">常用對數值</strong>：$\log 2 \approx 0.3010, \, \log 3 \approx 0.4771$。</li>
+                        <li>• <strong class="text-indigo-300">關鍵公式</strong>：$\log 5 = 1 - \log 2 \approx 0.6990$。</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900/80 p-5 rounded-xl border-t-4 border-emerald-400">
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-2">Branch 03</span>
+                    <h3 class="text-lg font-bold text-white mb-3">位數估算與跨學科應用</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 leading-relaxed">
+                        <li>• <strong class="text-emerald-300">首數與尾數</strong>：$\log A = n + d$ ($n \in \mathbb{Z}, \, 0 \le d < 1$)。</li>
+                        <li>• <strong class="text-emerald-300">位數與非零位</strong>：$n \ge 0 \implies (n+1)$ 位數；$n < 0 \implies$ 第 $|n|$ 位非零。</li>
+                        <li>• <strong class="text-emerald-300">地震規模</strong>：$\log E = 11.8 + 1.5M \implies$ 規模差 $1$，能量差 $10^{1.5} \approx 31.6$ 倍。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊二：易錯陷阱 -->
+        <section class="bg-slate-800 rounded-2xl p-6 md:p-8 border border-slate-700 shadow-lg">
+            <div class="flex items-center space-x-3 mb-6 border-b border-slate-700 pb-4">
+                <span class="p-3 bg-rose-500/20 text-rose-400 rounded-xl font-bold text-xl">🚨</span>
+                <div>
+                    <h2 class="text-2xl font-black text-white">段考常踩四大盲點陷阱</h2>
+                    <p class="text-xs text-slate-400">考前自我檢查警示卡</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-rose-400 text-base mb-1">陷阱 1：對數律拆解誤用「分配律」</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：誤以為 $\log (A + B) = \log A + \log B$ 或 $\frac{\log A}{\log B} = \log A - \log B$。<br>
+                        ✅ 正解：只有「真數相乘」才可以化為「對數相加」！即 $\log (A \cdot B) = \log A + \log B$。
+                    </p>
+                </div>
+
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-amber-500">
+                    <h3 class="font-bold text-amber-400 text-base mb-1">陷阱 2：負對數首尾數拆解未維持「尾數非負」</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：若 $\log A = -2.3010$，誤以為首數 $n = -2$，尾數 $d = -0.3010$。<br>
+                        ✅ 正解：尾數必須滿足 $0 \le d < 1$！正確拆解為 $-2.3010 = -3 + 0.6990$，首數為 $-3$，尾數為 $0.6990$。
+                    </p>
+                </div>
+
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-indigo-500">
+                    <h3 class="font-bold text-indigo-400 text-base mb-1">陷阱 3：對數方程式求解後漏掉檢驗「真數條件」</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：解 $\log x + \log(x-3) = 1$ 得 $x = 5$ 或 $x = -2$，保留兩個解。<br>
+                        ✅ 正解：真數必須大於 0（$x > 0$ 且 $x - 3 > 0 \implies x > 3$），故 $x = -2$ 是增根必須捨去！
+                    </p>
+                </div>
+
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-emerald-500">
+                    <h3 class="font-bold text-emerald-400 text-base mb-1">陷阱 4：最高位數字與首數概念混淆</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：以為整數部分首數 $n$ 直接決定最高位數字。<br>
+                        ✅ 正解：首數 $n$ 決定「位數」或「小數點後第幾位非零」；最高位數字是由尾數 $d$（對照 $\log 1, \log 2, \dots, \log 9$）決定的！
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊三：測驗模組 -->
+        <section class="bg-slate-800 rounded-2xl p-6 md:p-8 border border-slate-700 shadow-lg">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-700 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-3 bg-teal-500/20 text-teal-400 rounded-xl font-bold text-xl">📝</span>
+                    <div>
+                        <h2 class="text-2xl font-black text-white">課後衝刺小測驗 (5 題)</h2>
+                        <p class="text-xs text-slate-400">完成答題後點擊「提交測驗」取得成績與詳細解析！</p>
+                    </div>
+                </div>
+                <div id="quiz-score-badge" class="hidden bg-indigo-500 text-white font-black px-4 py-2 rounded-xl text-lg">
+                    得分：<span id="score-val">0</span> / 100
+                </div>
+            </div>
+
+            <form id="quiz-form" class="space-y-6">
+                <!-- Q1 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">1. 已知 $\log 2 \approx 0.3010$，試求 $\log 5$ 的近似值為何？</p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q1" value="A" class="form-radio text-indigo-500">
+                            <span>(A) 0.6990</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="form-radio text-indigo-500">
+                            <span>(B) 0.5000</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="form-radio text-indigo-500">
+                            <span>(C) 0.7525</span>
+                        </label>
+                    </div>
+                    <div id="exp-q1" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-indigo-300"></div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">2. 若 $A = 2^{50}$，已知 $\log 2 \approx 0.3010$，則 $A$ 的整數部分為幾位數？</p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q2" value="A" class="form-radio text-indigo-500">
+                            <span>(A) 15 位數</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="form-radio text-indigo-500">
+                            <span>(B) 16 位數</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="form-radio text-indigo-500">
+                            <span>(C) 17 位數</span>
+                        </label>
+                    </div>
+                    <div id="exp-q2" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-indigo-300"></div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">3. 若 $\log B = -6.02$，將 $B$ 化為小數，自小數點後第幾位開始出現第一個不為 0 的數字？</p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q3" value="A" class="form-radio text-indigo-500">
+                            <span>(A) 第 6 位</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q3" value="B" class="form-radio text-indigo-500">
+                            <span>(B) 第 7 位</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q3" value="C" class="form-radio text-indigo-500">
+                            <span>(C) 第 8 位</span>
+                        </label>
+                    </div>
+                    <div id="exp-q3" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-indigo-300"></div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">4. 解對數方程式 $\log x + \log(x - 3) = 1$，其實數解 $x$ 為何？</p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q4" value="A" class="form-radio text-indigo-500">
+                            <span>(A) $x = 5$ 或 $x = -2$</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q4" value="B" class="form-radio text-indigo-500">
+                            <span>(B) $x = 5$</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q4" value="C" class="form-radio text-indigo-500">
+                            <span>(C) $x = 3$</span>
+                        </label>
+                    </div>
+                    <div id="exp-q4" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-indigo-300"></div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">5. 若芮氏地震規模 8.0 釋放的能量為 $E_8$，規模 6.0 釋放的能量為 $E_6$，請問 $\frac{E_8}{E_6}$ 為多少倍？</p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q5" value="A" class="form-radio text-indigo-500">
+                            <span>(A) 100 倍</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q5" value="B" class="form-radio text-indigo-500">
+                            <span>(B) 1000 倍</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q5" value="C" class="form-radio text-indigo-500">
+                            <span>(C) 10000 倍</span>
+                        </label>
+                    </div>
+                    <div id="exp-q5" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-indigo-300"></div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="button" onclick="submitQuiz()" class="w-full py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-black rounded-xl shadow-lg transition">
+                        🚀 提交測驗，領取詳細解答
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+
+        function submitQuiz() {
+            const answers = { q1: 'A', q2: 'B', q3: 'B', q4: 'B', q5: 'B' };
+            const explanations = {
+                q1: "解析：$\\log 5 = \\log(10/2) = \\log 10 - \\log 2 = 1 - 0.3010 = 0.6990$。",
+                q2: "解析：$\\log A = 50 \\times \\log 2 \\approx 50 \\times 0.3010 = 15.05$。首數 $n = 15$，位數為 $n + 1 = 16$ 位數。",
+                q3: "解析：$\\log B = -6.02 = -7 + 0.98$。首數為 $-7$，故自小數點後第 7 位開始出現第一個不為 0 的數字。",
+                q4: "解析：限制 $x > 3$。式子可化為 $\\log(x(x-3)) = 1 \\implies x^2 - 3x - 10 = 0 \\implies (x-5)(x+2) = 0 \\implies x = 5$ （$x = -2$ 增根捨去）。",
+                q5: "解析：能量公式 $\\log E = 11.8 + 1.5M$。規模相差 $\\Delta M = 8.0 - 6.0 = 2$，能量相差 $10^{1.5 \\times 2} = 10^3 = 1000$ 倍。"
+            };
+
+            let score = 0;
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const expDiv = document.getElementById(`exp-${q}`);
+                expDiv.classList.remove('hidden');
+
+                if (selected && selected.value === answers[q]) {
+                    score += 20;
+                    expDiv.innerHTML = "✅ 答對了！ " + explanations[q];
+                    expDiv.className = "mt-3 p-3 bg-emerald-950/80 rounded text-xs text-emerald-300 border border-emerald-800";
+                } else {
+                    expDiv.innerHTML = "❌ 答錯了！ " + explanations[q];
+                    expDiv.className = "mt-3 p-3 bg-rose-950/80 rounded text-xs text-rose-300 border border-rose-800";
+                }
+
+                if (typeof renderMathInElement === 'function') {
+                    renderMathInElement(expDiv, { delimiters: [{left: '$', right: '$', display: false}] });
+                }
+            }
+
+            const badge = document.getElementById('quiz-score-badge');
+            const scoreVal = document.getElementById('score-val');
+            badge.classList.remove('hidden');
+            scoreVal.innerText = score;
+            window.scrollTo({ top: badge.offsetTop - 100, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
