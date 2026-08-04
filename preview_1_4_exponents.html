@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-4 常用對數與科學記號 - 課前預習教案</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen pb-12">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-700 text-white py-8 px-4 shadow-md">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-3 mb-2">
+                <span class="bg-indigo-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">高一數學第一冊</span>
+                <span class="bg-indigo-900 text-xs font-semibold px-3 py-1 rounded-full">SOP 階段三：課前預習網頁</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold">1-4 課前預習：常用對數與科學記號</h1>
+            <p class="mt-2 text-indigo-100 text-lg">目標：建立常用對數為「以 10 為底之次方數」觀念，並掌握真數必為正數之幾何直覺！</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 mt-8 space-y-8">
+
+        <!-- 1. 生活情境引入 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">1</span>
+                生活思考題：地震規模 6 跟規模 8 差幾倍？
+            </h2>
+            <div class="prose max-w-none text-slate-700 leading-relaxed">
+                <p>新聞報導中常聽到「地震芮氏規模」，例如規模 6.0 與規模 8.0。規模每增加 $1$，釋放的能量大約增加 <span class="font-semibold text-indigo-600">31.6 倍 ($10^{1.5}$)</span>。</p>
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-md my-4">
+                    <p class="font-medium text-amber-900">🤔 想想看：規模 8.0 地震釋放的能量，是規模 6.0 的幾倍呢？</p>
+                    <p class="text-xs text-amber-800 mt-1">（提示：規模差了 $8.0 - 6.0 = 2$，能量差異為 $10^{1.5 \times 2} = 10^3$）</p>
+                </div>
+                <p>答案是：<strong class="text-indigo-600 font-bold">1000 倍</strong>！當數值變化極龐大時，對數 $\log$ 能幫我們把巨型數字壓縮成平易近人的位數（次方數）。</p>
+            </div>
+        </section>
+
+        <!-- 2. 精準 SVG 幾何圖形：對數函數圖形與真數限制 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">2</span>
+                幾何直觀：常用對數 $y = \log x$ 的圖形與真數條件
+            </h2>
+            <p class="text-slate-600 mb-6">
+                常用對數 $y = \log x$ 是代表「$10^y = x$」的次方數。
+                圖形必過定點 <strong class="text-indigo-600 font-semibold">(1, 0)</strong>，且因為 $10^y$ 恆正，真數 $x$ 必須嚴格限定在 <strong class="text-rose-600 font-semibold">$x > 0$</strong> （圖形完全在 $y$-軸右側，以 $x=0$ 為漸近線）。
+            </p>
+
+            <!-- SVG 圖形 -->
+            <div class="bg-slate-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-inner">
+                <svg viewBox="0 0 500 280" class="w-full max-w-lg">
+                    <!-- 坐標軸 -->
+                    <line x1="30" y1="180" x2="470" y2="180" stroke="#94a3b8" stroke-width="2" /> <!-- x 軸 -->
+                    <polygon points="470,175 480,180 470,185" fill="#94a3b8" />
+                    <line x1="80" y1="260" x2="80" y2="20" stroke="#94a3b8" stroke-width="2" /> <!-- y 軸 -->
+                    <polygon points="75,20 80,10 85,20" fill="#94a3b8" />
+
+                    <!-- 漸近線虛線 x=0 (y 軸) -->
+                    <line x1="82" y1="20" x2="82" y2="260" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4,4" />
+
+                    <!-- Curve y = log x -->
+                    <path d="M 86 260 C 90 220, 110 190, 140 180 C 220 160, 320 135, 450 110" fill="none" stroke="#38bdf8" stroke-width="3.5" />
+
+                    <!-- 通過點 (1,0) -->
+                    <circle cx="140" cy="180" r="5" fill="#f59e0b" />
+                    <text x="145" y="200" fill="#f59e0b" font-size="13" font-weight="bold">(1, 0)</text>
+
+                    <!-- 通過點 (10,1) -->
+                    <circle cx="440" cy="110" r="4" fill="#38bdf8" />
+                    <text x="415" y="95" fill="#38bdf8" font-size="12" font-weight="bold">(10, 1)</text>
+
+                    <!-- 文字標籤 -->
+                    <text x="475" y="198" fill="#cbd5e1" font-size="12">x</text>
+                    <text x="65" y="20" fill="#cbd5e1" font-size="12">y</text>
+                    <text x="320" y="80" fill="#38bdf8" font-size="14" font-weight="bold">y = log x</text>
+                    <text x="95" y="250" fill="#f43f5e" font-size="11" font-weight="bold">漸近線：y 軸 (x = 0)</text>
+                    <text x="220" y="230" fill="#34d399" font-size="12" font-weight="bold">真數定義域區間：x &gt; 0</text>
+                </svg>
+                <p class="text-xs text-slate-400 mt-2">（觀念重點：真數 $x$ 必須恆大於 0，對數值 $y = \log x$ 可為正數、0 或負數）</p>
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
+                    <span class="text-indigo-800 font-bold block mb-1">常用對數基本定義</span>
+                    <p class="text-indigo-950 text-xl font-black">$10^x = p \iff x = \log p$</p>
+                    <p class="text-indigo-700 text-xs mt-1">恆等式：$10^{\log p} = p, \quad \log 10^a = a$</p>
+                </div>
+                <div class="p-4 bg-rose-50 rounded-lg border border-rose-100">
+                    <span class="text-rose-800 font-bold block mb-1">解對數方程式第一要務</span>
+                    <p class="text-rose-950 text-xl font-black font-mono">真數必為正數 ($p > 0$)</p>
+                    <p class="text-rose-700 text-xs mt-1">極易錯陷阱：解出答案後務必代回檢驗真數是否大於 0！</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 預習自我檢測 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">3</span>
+                課前觀念微測驗（選選看）
+            </h2>
+
+            <div class="space-y-6">
+                <!-- 題目一 -->
+                <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                    <p class="font-semibold text-slate-800">Q1. 已知 $\log 100 = 2, \log 1000 = 3$，請問 $\log 500$ 大約落在哪兩個連續整數之間？</p>
+                    <div class="mt-3 space-y-2">
+                        <button onclick="checkQ1(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(A) $1$ 與 $2$ 之間</button>
+                        <button onclick="checkQ1(this, true)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(B) $2$ 與 $3$ 之間</button>
+                        <button onclick="checkQ1(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(C) $3$ 與 $4$ 之間</button>
+                    </div>
+                    <div id="q1-feedback" class="mt-3 hidden p-3 rounded-md text-sm font-medium"></div>
+                </div>
+
+                <!-- 題目二 -->
+                <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                    <p class="font-semibold text-slate-800">Q2. 在解對數方程式 $\log (x - 2) = 1$ 時，第一步必須列出的「真數條件」限制是什麼？</p>
+                    <div class="mt-3 space-y-2">
+                        <button onclick="checkQ2(this, true)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(A) $x - 2 > 0 \implies x > 2$</button>
+                        <button onclick="checkQ2(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(B) $x - 2 \ge 0 \implies x \ge 2$</button>
+                        <button onclick="checkQ2(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(C) $x$ 為任意實數即可</button>
+                    </div>
+                    <div id="q2-feedback" class="mt-3 hidden p-3 rounded-md text-sm font-medium"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+
+        function checkQ1(btn, isCorrect) {
+            const feedback = document.getElementById('q1-feedback');
+            feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            if(isCorrect) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = "🎉 答對了！因為 $100 < 500 < 1000$，取對數得 $\\log 100 < \\log 500 < \\log 1000 \\implies 2 < \\log 500 < 3$！";
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = "❌ 再想想看！500 是介於 100 ($10^2$) 與 1000 ($10^3$) 之間，對數值代表次方數，所以落在哪裡呢？";
+            }
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(feedback, { delimiters: [{left: '$', right: '$', display: false}] });
+            }
+        }
+
+        function checkQ2(btn, isCorrect) {
+            const feedback = document.getElementById('q2-feedback');
+            feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            if(isCorrect) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = "🎉 太棒了！對數的真數必須『嚴格大於 0』（不能等於 0），故 $x - 2 > 0 \\implies x > 2$！";
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = "❌ 注意！常用對數源自於 $10^y = p$，因為 $10^y$ 恆大於 0，所以真數 $p$ 不能為 0 也不能為負數哦！";
+            }
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(feedback, { delimiters: [{left: '$', right: '$', display: false}] });
+            }
+        }
+    </script>
+</body>
+</html>

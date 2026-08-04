@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【預習】1-3 指數 - 第一冊第一章</title>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --primary-color: #2e7d32;
+      --secondary-color: #81c784;
+      --bg-color: #f1f8e9;
+      --card-bg: #ffffff;
+      --text-color: #212121;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .tag {
+      background: #c8e6c9;
+      color: #1b5e20;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 5px;
+    }
+    .warmup-box {
+      background: #e8f5e9;
+      border-left: 4px solid var(--primary-color);
+      padding: 15px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="tag">課前預習</span>
+      <h1 style="margin: 10px 0 0 0;">1-3 指數：從整數到實數的擴充</h1>
+    </header>
+
+    <div class="card">
+      <h2>學習目標</h2>
+      <ul>
+        <li>溫習國中學過的整數指數律。</li>
+        <li>理解為什麼 $a^0 = 1$ 與 $a^{-n} = \dfrac{1}{a^n}$。</li>
+        <li>初步認識根號與分數指數的對應關係。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>預習思考題（國中銜接）</h2>
+      <div class="warmup-box">
+        <p><strong>思考 1：</strong> 我們知道 $2^3 = 8$，$2^2 = 4$，$2^1 = 2$。每次次方減 $1$，數值就除以 $2$。那麼照這個規律：</p>
+        <ul>
+          <li>$2^0 = $ ？</li>
+          <li>$2^{-1} = $ ？</li>
+        </ul>
+      </div>
+      <div class="warmup-box">
+        <p><strong>思考 2：</strong> 若要讓指數律 $(a^m)^n = a^{mn}$ 繼續成立，對於 $(9^{\frac{1}{2}})^2 = 9^1 = 9$，你認為 $9^{\frac{1}{2}}$ 應該代表什麼數字？</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>核心觀念速覽</h2>
+      <p>1. <strong>指數律擴充：</strong> 當底數 $a > 0$ 時，指數可從整數擴展至分數（有理數）與實數。</p>
+      <p>2. <strong>分數指數與根號：</strong> $a^{\frac{1}{n}} = \sqrt[n]{a}$，且 $a^{\frac{m}{n}} = \sqrt[n]{a^m}$。</p>
+    </div>
+  </div>
+</body>
+</html>

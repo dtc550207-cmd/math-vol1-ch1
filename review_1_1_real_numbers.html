@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-1 實數與算幾不等式 - 課後復習與考前衝刺</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen pb-20">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-emerald-700 to-teal-800 text-white py-10 px-4 border-b-4 border-emerald-400 shadow-xl">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="bg-emerald-400 text-slate-950 font-black px-3 py-1 rounded text-xs uppercase tracking-wider">階段三：課後獨立復習</span>
+                <span class="bg-emerald-950 text-emerald-200 px-3 py-1 rounded text-xs border border-emerald-700">總測驗 & 心智圖整理</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white">1-1 實數與算幾不等式（課後總復習）</h1>
+            <p class="mt-3 text-emerald-100 text-base md:text-lg">觀念心智圖 ➔ 錯題陷阱診斷 ➔ 課後自我檢測小考</p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 mt-10 space-y-12">
+
+        <!-- 區塊一：知識結構心智圖 -->
+        <section class="bg-slate-800 rounded-2xl p-6 md:p-8 border border-slate-700 shadow-lg">
+            <div class="flex items-center space-x-3 mb-6 border-b border-slate-700 pb-4">
+                <span class="p-3 bg-emerald-500/20 text-emerald-400 rounded-xl font-bold text-xl">🧠</span>
+                <div>
+                    <h2 class="text-2xl font-black text-white">單元核心觀念心智圖 (Concept Map)</h2>
+                    <p class="text-xs text-slate-400">快速瀏覽本單元的三大核心邏輯支柱</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 節點 1 -->
+                <div class="bg-slate-900/80 p-5 rounded-xl border-t-4 border-sky-400 hover:border-sky-300 transition">
+                    <span class="text-xs font-bold text-sky-400 uppercase tracking-widest block mb-2">Branch 01</span>
+                    <h3 class="text-lg font-bold text-white mb-3">實數系與循環小數</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 leading-relaxed">
+                        <li>• <strong class="text-sky-300">數系包含</strong>：$\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$。</li>
+                        <li>• <strong class="text-sky-300">有限小數條件</strong>：最簡分數分母質因數僅含 $2$ 或 $5$。</li>
+                        <li>• <strong class="text-sky-300">循環小數化分數</strong>：$0.\bar{a} = \frac{a}{9}$, $0.a\bar{b} = \frac{ab-a}{90}$。</li>
+                    </ul>
+                </div>
+
+                <!-- 節點 2 -->
+                <div class="bg-slate-900/80 p-5 rounded-xl border-t-4 border-indigo-400 hover:border-indigo-300 transition">
+                    <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest block mb-2">Branch 02</span>
+                    <h3 class="text-lg font-bold text-white mb-3">雙重根號化簡</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 leading-relaxed">
+                        <li>• <strong class="text-indigo-300">標準型態</strong>：$\sqrt{(a+b) \pm 2\sqrt{ab}} = \sqrt{a} \pm \sqrt{b}$ ($a \ge b \ge 0$)。</li>
+                        <li>• <strong class="text-indigo-300">關鍵條件</strong>：內層根號前一定要湊出係數 <span class="text-amber-400 font-bold">$2$</span>。</li>
+                        <li>• <strong class="text-indigo-300">大數在前</strong>：開號減號保持非負 $\sqrt{a} - \sqrt{b}$。</li>
+                    </ul>
+                </div>
+
+                <!-- 節點 3 -->
+                <div class="bg-slate-900/80 p-5 rounded-xl border-t-4 border-emerald-400 hover:border-emerald-300 transition">
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-2">Branch 03</span>
+                    <h3 class="text-lg font-bold text-white mb-3">算幾不等式應用</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 leading-relaxed">
+                        <li>• <strong class="text-emerald-300">基本公式</strong>：$\frac{a+b}{2} \ge \sqrt{ab}$（前提：$a, b \ge 0$）。</li>
+                        <li>• <strong class="text-emerald-300">極值規律</strong>：和定求積最大；積定求和最小。</li>
+                        <li>• <strong class="text-emerald-300">等號條件</strong>：當且僅當 $a = b$ 時，取極值。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊二：高頻易錯陷阱與診斷 -->
+        <section class="bg-slate-800 rounded-2xl p-6 md:p-8 border border-slate-700 shadow-lg">
+            <div class="flex items-center space-x-3 mb-6 border-b border-slate-700 pb-4">
+                <span class="p-3 bg-rose-500/20 text-rose-400 rounded-xl font-bold text-xl">🚨</span>
+                <div>
+                    <h2 class="text-2xl font-black text-white">段考常踩四大盲點陷阱 (Error Traps)</h2>
+                    <p class="text-xs text-slate-400">複習時請自我檢視，避免考場失分！</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-rose-400 text-base mb-1">陷阱 1：忽略「正數前提」直接套用算幾不等式</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：若 $x \in \mathbb{R}$，求 $x^2 + \frac{1}{x^2}$ 的最小值時，若未確認 $x \neq 0$ 且 $x^2 > 0$ 就直接套用，可能在非正數領域出錯。<br>
+                        ✅ 正解：必須說明「因為 $x^2 > 0, \frac{1}{x^2} > 0$」，始可使用算幾不等式。
+                    </p>
+                </div>
+
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-amber-500">
+                    <h3 class="font-bold text-amber-400 text-base mb-1">陷阱 2：雙重根號化簡忘記「大數減小數」</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：化簡 $\sqrt{5 - 2\sqrt{6}}$ 寫成 $\sqrt{2} - \sqrt{3}$。<br>
+                        ✅ 正解：根號值必為非負，因為 $\sqrt{3} > \sqrt{2}$，正確答案務必寫成 $\sqrt{3} - \sqrt{2}$。
+                    </p>
+                </div>
+
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-indigo-500">
+                    <h3 class="font-bold text-indigo-400 text-base mb-1">陷阱 3：多次使用算幾不等式時未檢驗「等號能否同時成立」</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：求 $(a + \frac{1}{b})(b + \frac{4}{a})$ 最小值時，若分開對兩括號用算幾不等式相乘，兩邊等號成立條件分別為 $a=\frac{1}{b}$ 與 $b=\frac{4}{a}$，矛盾！<br>
+                        ✅ 正解：應先將式子「展開」為 $ab + 4 + 1 + \frac{4}{ab} = ab + \frac{4}{ab} + 5$，再對 $ab$ 與 $\frac{4}{ab}$ 施用一次算幾不等式。
+                    </p>
+                </div>
+
+                <div class="p-4 bg-slate-900/60 rounded-xl border-l-4 border-emerald-500">
+                    <h3 class="font-bold text-emerald-400 text-base mb-1">陷阱 4：循環小數減法時直接以小數點對齊相減</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        ❌ 錯例：計算 $0.\bar{7} - 0.1\bar{6}$ 時直接對齊相減容易借位出錯。<br>
+                        ✅ 正解：一律將循環小數化為分數（$\frac{7}{9} - \frac{15}{90}$），通分後計算最為精確。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊三：課後隨堂小考測驗 (Quiz) -->
+        <section class="bg-slate-800 rounded-2xl p-6 md:p-8 border border-slate-700 shadow-lg">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-700 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-3 bg-teal-500/20 text-teal-400 rounded-xl font-bold text-xl">📝</span>
+                    <div>
+                        <h2 class="text-2xl font-black text-white">課後衝刺小測驗 (5 題)</h2>
+                        <p class="text-xs text-slate-400">完成答題後點擊「提交測驗」即可取得成績與詳解！</p>
+                    </div>
+                </div>
+                <div id="quiz-score-badge" class="hidden bg-emerald-500 text-slate-950 font-black px-4 py-2 rounded-xl text-lg">
+                    得分：<span id="score-val">0</span> / 100
+                </div>
+            </div>
+
+            <form id="quiz-form" class="space-y-6">
+                <!-- 題 1 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">
+                        1. 下列何者化為小數後為「有限小數」？
+                    </p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q1" value="A" class="form-radio text-emerald-500">
+                            <span>(A) $\frac{7}{15}$</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="form-radio text-emerald-500">
+                            <span>(B) $\frac{21}{280}$</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="form-radio text-emerald-500">
+                            <span>(C) $\frac{5}{12}$</span>
+                        </label>
+                    </div>
+                    <div id="exp-q1" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-emerald-400"></div>
+                </div>
+
+                <!-- 題 2 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">
+                        2. 化簡 $\sqrt{14 - 6\sqrt{5}}$ 的結果為何？
+                    </p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q2" value="A" class="form-radio text-emerald-500">
+                            <span>(A) $3 - \sqrt{5}$</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="form-radio text-emerald-500">
+                            <span>(B) $\sqrt{5} - 3$</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="form-radio text-emerald-500">
+                            <span>(C) $3 + \sqrt{5}$</span>
+                        </label>
+                    </div>
+                    <div id="exp-q2" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-emerald-400"></div>
+                </div>
+
+                <!-- 題 3 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">
+                        3. 已知 $a>0, b>0$，且 $a + 2b = 12$，求 $ab$ 的最大值為何？
+                    </p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q3" value="A" class="form-radio text-emerald-500">
+                            <span>(A) 36</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q3" value="B" class="form-radio text-emerald-500">
+                            <span>(B) 18</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q3" value="C" class="form-radio text-emerald-500">
+                            <span>(C) 12</span>
+                        </label>
+                    </div>
+                    <div id="exp-q3" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-emerald-400"></div>
+                </div>
+
+                <!-- 題 4 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">
+                        4. 若 $x > 2$，則 $x + \frac{4}{x-2}$ 的最小值為何？
+                    </p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q4" value="A" class="form-radio text-emerald-500">
+                            <span>(A) 4</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q4" value="B" class="form-radio text-emerald-500">
+                            <span>(B) 6</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q4" value="C" class="form-radio text-emerald-500">
+                            <span>(C) 8</span>
+                        </label>
+                    </div>
+                    <div id="exp-q4" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-emerald-400"></div>
+                </div>
+
+                <!-- 題 5 -->
+                <div class="p-5 bg-slate-900/80 rounded-xl border border-slate-700">
+                    <p class="font-bold text-slate-200 text-sm mb-3">
+                        5. 關於算幾不等式 $\frac{a+b}{2} \ge \sqrt{ab}$，下列敘述何者「錯誤」？
+                    </p>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q5" value="A" class="form-radio text-emerald-500">
+                            <span>(A) 當 $a=b$ 時，等號必成立。</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q5" value="B" class="form-radio text-emerald-500">
+                            <span>(B) 若 $a, b$ 為任意實數（包含負數），此不等式依然恆成立。</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2 bg-slate-800/50 rounded hover:bg-slate-800 cursor-pointer">
+                            <input type="radio" name="q5" value="C" class="form-radio text-emerald-500">
+                            <span>(C) 幾何意涵對應到半圓的「半徑 $\ge$ 垂直高」。</span>
+                        </label>
+                    </div>
+                    <div id="exp-q5" class="hidden mt-3 p-3 bg-slate-950 rounded text-xs text-emerald-400"></div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="button" onclick="submitQuiz()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black rounded-xl shadow-lg transition">
+                        🚀 提交測驗，領取詳細解答
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+
+        function submitQuiz() {
+            const answers = { q1: 'B', q2: 'A', q3: 'B', q4: 'B', q5: 'B' };
+            const explanations = {
+                q1: "解析：(B) $\\frac{21}{280} = \\frac{3}{40} = \\frac{3}{2^3 \\times 5}$，最簡分數分母質因數只有 2 與 5，故為有限小數（0.075）。",
+                q2: "解析：(A) $\\sqrt{14 - 6\\sqrt{5}} = \\sqrt{14 - 2\\sqrt{45}}$，尋找和為 14、積為 45 的兩數為 9 與 5。故原式 $= \\sqrt{9} - \\sqrt{5} = 3 - \\sqrt{5}$。",
+                q3: "解析：(B) 套用算幾不等式：$\\frac{a+2b}{2} \\ge \\sqrt{a \\cdot 2b} \\Rightarrow \\frac{12}{2} = 6 \\ge \\sqrt{2ab} \\Rightarrow 36 \\ge 2ab \\Rightarrow ab \\le 18$。最大值為 18。",
+                q4: "解析：(B) 將原式湊項為 $(x-2) + \\frac{4}{x-2} + 2$。因為 $x>2 \\Rightarrow x-2 > 0$，算幾不等式得 $(x-2) + \\frac{4}{x-2} \\ge 2\\sqrt{4} = 4$。再加上 2 得到最小值為 $4+2=6$。",
+                q5: "解析：(B) 錯誤！算幾不等式的前提條件是 $a \\ge 0, b \\ge 0$。若包含負數，開根號會出現虛數，不等式不再成立。"
+            };
+
+            let score = 0;
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const expDiv = document.getElementById(`exp-${q}`);
+                expDiv.classList.remove('hidden');
+
+                if (selected && selected.value === answers[q]) {
+                    score += 20;
+                    expDiv.innerHTML = "✅ 答對了！ " + explanations[q];
+                    expDiv.className = "mt-3 p-3 bg-emerald-950/80 rounded text-xs text-emerald-300 border border-emerald-800";
+                } else {
+                    expDiv.innerHTML = "❌ 答錯了！ " + explanations[q];
+                    expDiv.className = "mt-3 p-3 bg-rose-950/80 rounded text-xs text-rose-300 border border-rose-800";
+                }
+
+                if (typeof renderMathInElement === 'function') {
+                    renderMathInElement(expDiv, {
+                        delimiters: [
+                            {left: '$$', right: '$$', display: true},
+                            {left: '$', right: '$', display: false}
+                        ],
+                        throwOnError: false
+                    });
+                }
+            }
+
+            const badge = document.getElementById('quiz-score-badge');
+            const scoreVal = document.getElementById('score-val');
+            badge.classList.remove('hidden');
+            scoreVal.innerText = score;
+            window.scrollTo({ top: badge.offsetTop - 100, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

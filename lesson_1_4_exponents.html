@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【講義】1-4 對數 - 第一冊第一章</title>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --primary-color: #1565c0;
+      --secondary-color: #90caf9;
+      --accent-color: #d32f2f;
+      --bg-color: #f5f5f5;
+      --card-bg: #ffffff;
+      --text-color: #212121;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .tag {
+      background: #bbdefb;
+      color: #0d47a1;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-left: 5px solid var(--primary-color);
+    }
+    .example-card {
+      border-left-color: var(--accent-color);
+    }
+    h2 {
+      color: var(--primary-color);
+      margin-top: 0;
+    }
+    .formula-box {
+      background-color: #e3f2fd;
+      border: 1px solid #90caf9;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 15px 0;
+    }
+    .solution {
+      background-color: #fff8e1;
+      border: 1px solid #ffe082;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .note {
+      color: #c62828;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="tag">上課講義</span>
+      <h1 style="margin: 10px 0 0 0;">1-4 對數律與換底公式（正課內容）</h1>
+    </header>
+
+    <!-- 觀念一 -->
+    <div class="card">
+      <h2>主題一：常用對數律</h2>
+      <p>設底數 $a > 0, a \neq 1$，且真數 $x > 0, y > 0$：</p>
+      <div class="formula-box">
+        <ol>
+          <li><strong>相加變相乘：</strong> $\log_a x + \log_a y = \log_a (xy)$</li>
+          <li><strong>相減變相除：</strong> $\log_a x - \log_a y = \log_a \left(\dfrac{x}{y}\right)$</li>
+          <li><strong>真數次方向前提：</strong> $\log_a (x^k) = k \cdot \log_a x$ （$k \in \mathbb{R}$）</li>
+          <li><strong>底數與真數次方向前提：</strong> $\log_{a^m} (x^n) = \dfrac{n}{m} \log_a x$</li>
+        </ol>
+      </div>
+      <p class="note">口訣提醒：對數相加等於真數相乘，對數相減等於真數相除！</p>
+    </div>
+
+    <!-- 觀念二 -->
+    <div class="card">
+      <h2>主題二：換底公式與對數性質擴展</h2>
+      <p>設 $a, b, c > 0$ 且 $a, c \neq 1$：</p>
+      <div class="formula-box">
+        <ol>
+          <li><strong>換底公式：</strong> $\log_a b = \dfrac{\log_c b}{\log_c a}$</li>
+          <li><strong>倒數性質：</strong> $\log_a b = \dfrac{1}{\log_b a}$ （其中 $b \neq 1$）</li>
+          <li><strong>連鎖律：</strong> $\log_a b \cdot \log_b c \cdot \log_c d = \log_a d$</li>
+          <li><strong>指數對數對換：</strong> $a^{\log_c b} = b^{\log_c a}$ （特例：$a^{\log_a b} = b$）</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 經典典範例題 1 -->
+    <div class="card example-card">
+      <h2>典範例題 1：對數式運算與化簡</h2>
+      <p><strong>【題目】</strong> 化簡下列各式之值：</p>
+      <p>(1) $\log_6 9 + \log_6 4$</p>
+      <p>(2) $2 \log_3 6 - \log_3 4$</p>
+
+      <div class="solution">
+        <p><strong>【解析】</strong></p>
+        <p>(1) 利用「同底相加等於真數相乘」：</p>
+        $$\log_6 9 + \log_6 4 = \log_6 (9 \cdot 4) = \log_6 36 = \log_6 (6^2) = 2$$
+        <hr style="border: 0; border-top: 1px dashed #ccc;">
+        <p>(2) 先將對數前面的係數移回真數次方，再利用「相減等於相除」：</p>
+        $$2 \log_3 6 = \log_3 (6^2) = \log_3 36$$
+        $$\log_3 36 - \log_3 4 = \log_3 \left(\dfrac{36}{4}\right) = \log_3 9 = \log_3 (3^2) = 2$$
+      </div>
+    </div>
+
+    <!-- 經典典範例題 2 -->
+    <div class="card example-card">
+      <h2>典範例題 2：換底公式與連鎖律綜合應用</h2>
+      <p><strong>【題目】</strong> 求 $(\log_2 3 + \log_4 9) \cdot (\log_3 2 + \log_9 2)$ 之值。</p>
+      <div class="solution">
+        <p><strong>【解析】</strong></p>
+        <p>先將底數化為最簡質數次方：</p>
+        <p>1. 化簡第一括號：$\log_4 9 = \log_{2^2} (3^2) = \dfrac{2}{2} \log_2 3 = \log_2 3$</p>
+        <p>故第一括號 $= \log_2 3 + \log_2 3 = 2 \log_2 3$</p>
+
+        <p>2. 化簡第二括號：$\log_9 2 = \log_{3^2} 2 = \dfrac{1}{2} \log_3 2$</p>
+        <p>故第二括號 $= \log_3 2 + \dfrac{1}{2} \log_3 2 = \dfrac{3}{2} \log_3 2$</p>
+
+        <p>3. 兩式相乘並利用倒數性質（$\log_2 3 \cdot \log_3 2 = 1$）：</p>
+        $$\text{原式} = (2 \log_2 3) \cdot \left(\dfrac{3}{2} \log_3 2\right) = 2 \cdot \dfrac{3}{2} \cdot (\log_2 3 \cdot \log_3 2) = 3 \cdot 1 = 3$$
+      </div>
+    </div>
+  </div>
+</body>
+</html>

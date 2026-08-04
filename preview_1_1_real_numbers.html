@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-1 實數與算幾不等式 - 課前預習教案</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen pb-12">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-700 text-white py-8 px-4 shadow-md">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-3 mb-2">
+                <span class="bg-indigo-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">高一數學第一冊</span>
+                <span class="bg-indigo-900 text-xs font-semibold px-3 py-1 rounded-full">跨版本融合：南一 x 龍騰</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold">1-1 課前預習：實數與算幾不等式</h1>
+            <p class="mt-2 text-indigo-100 text-lg">目標：在上課前，用最直觀的幾何圖形建立「算術平均數 $\ge$ 幾何平均數」直覺！</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 mt-8 space-y-8">
+
+        <!-- 1. 生活情境引入 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">1</span>
+                生活思考題：籬笆圍農場的最大面積？
+            </h2>
+            <div class="prose max-w-none text-slate-700 leading-relaxed">
+                <p>假設農夫小明手上有長度為 <span class="font-semibold text-indigo-600">20 公尺</span> 的圍籬，想要在平地上圍出一個長方形花園。</p>
+                <p>如果設長方形的長為 $a$ 公尺、寬為 $b$ 公尺，那麼周長 $2a + 2b = 20$，也就是 <strong class="text-slate-900">$a + b = 10$（和為定值）</strong>。</p>
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-md my-4">
+                    <p class="font-medium text-amber-900">🤔 想想看：當長 $a$ 與寬 $b$ 各是多少公尺時，圍出來的花園面積 $a \times b$ 會最大？</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 精準 SVG 幾何直觀 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">2</span>
+                幾何證明圖：半圓中的直角三角形
+            </h2>
+            <p class="text-slate-600 mb-6">
+                我們可以用「半圓」來直觀觀察算幾不等式！以 $a+b$ 為直徑畫一個半圓，半徑長度即為 <strong class="text-indigo-600 font-semibold">算術平均數 $\frac{a+b}{2}$</strong>，而圓上的垂直高即為 <strong class="text-emerald-600 font-semibold">幾何平均數 $\sqrt{ab}$</strong>。
+            </p>
+
+            <!-- SVG 幾何圖形 -->
+            <div class="bg-slate-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-inner">
+                <svg viewBox="0 0 500 280" class="w-full max-w-lg">
+                    <!-- 半圓 (直徑 400, 半徑 200, 圓心 (250, 220)) -->
+                    <path d="M 50 220 A 200 200 0 0 1 450 220 Z" fill="none" stroke="#64748b" stroke-width="2" />
+                    <!-- 底邊 (直徑 a+b) -->
+                    <line x1="30" y1="220" x2="470" y2="220" stroke="#94a3b8" stroke-width="2" />
+                    
+                    <!-- 弦/高 (幾何平均數 sqrt(ab)) -->
+                    <line x1="170" y1="220" x2="170" y2="36.7" stroke="#10b981" stroke-width="3.5" stroke-dasharray="6,4"/>
+                    
+                    <!-- 半徑 (算術平均數 (a+b)/2) -->
+                    <line x1="250" y1="220" x2="170" y2="36.7" stroke="#6366f1" stroke-width="3.5"/>
+
+                    <!-- 圓心 O -->
+                    <circle cx="250" cy="220" r="4" fill="#38bdf8" />
+                    <!-- P點 -->
+                    <circle cx="170" cy="220" r="4" fill="#f59e0b" />
+                    <!-- Q點 -->
+                    <circle cx="170" cy="36.7" r="4" fill="#10b981" />
+
+                    <!-- 文字標籤 -->
+                    <text x="40" y="245" fill="#e2e8f0" font-size="14" font-weight="bold">A</text>
+                    <text x="450" y="245" fill="#e2e8f0" font-size="14" font-weight="bold">B</text>
+                    <text x="245" y="245" fill="#38bdf8" font-size="14" font-weight="bold">O (圓心)</text>
+                    <text x="165" y="245" fill="#f59e0b" font-size="14" font-weight="bold">P</text>
+                    <text x="165" y="25" fill="#10b981" font-size="14" font-weight="bold">Q</text>
+
+                    <!-- 長度 a 與 b -->
+                    <text x="100" y="210" fill="#cbd5e1" font-size="13">長度 a</text>
+                    <text x="300" y="210" fill="#cbd5e1" font-size="13">長度 b</text>
+
+                    <!-- 線段標籤 -->
+                    <text x="180" y="120" fill="#10b981" font-size="13" font-weight="bold">高 PQ = √(ab)</text>
+                    <text x="215" y="110" fill="#a5b4fc" font-size="13" font-weight="bold">半徑 OQ = (a+b)/2</text>
+                </svg>
+                <p class="text-xs text-slate-400 mt-2">（從圖中明顯可見：半徑斜邊 $OQ$ 恆大於等於 垂直高 $PQ$，即 $\frac{a+b}{2} \ge \sqrt{ab}$）</p>
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
+                    <span class="text-indigo-800 font-bold block mb-1">算術平均數 (AM)</span>
+                    <p class="text-indigo-950 text-2xl font-black">$\frac{a+b}{2}$</p>
+                    <p class="text-indigo-700 text-xs mt-1">代數意涵：兩數相加除以 2（即圓的半徑）</p>
+                </div>
+                <div class="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                    <span class="text-emerald-800 font-bold block mb-1">幾何平均數 (GM)</span>
+                    <p class="text-emerald-950 text-2xl font-black font-mono">$\sqrt{ab}$</p>
+                    <p class="text-emerald-700 text-xs mt-1">代數意涵：兩數相乘開根號（即半圓內的垂直高）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 預習自我檢測 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">3</span>
+                課前觀念微測驗（選選看）
+            </h2>
+
+            <div class="space-y-6">
+                <!-- 題目一 -->
+                <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                    <p class="font-semibold text-slate-800">Q1. 若 $a, b$ 為正實數，已知 $a + b = 12$，請問 $ab$ 的「最大值」是多少？</p>
+                    <div class="mt-3 space-y-2">
+                        <button onclick="checkQ1(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(A) 12</button>
+                        <button onclick="checkQ1(this, true)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(B) 36</button>
+                        <button onclick="checkQ1(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(C) 64</button>
+                    </div>
+                    <div id="q1-feedback" class="mt-3 hidden p-3 rounded-md text-sm font-medium"></div>
+                </div>
+
+                <!-- 題目二 -->
+                <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                    <p class="font-semibold text-slate-800">Q2. 要使用算幾不等式 $\frac{a+b}{2} \ge \sqrt{ab}$ 時，條件 $a, b$ 必須滿足什麼條件？</p>
+                    <div class="mt-3 space-y-2">
+                        <button onclick="checkQ2(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(A) $a, b$ 必須都是整數</button>
+                        <button onclick="checkQ2(this, true)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(B) $a, b$ 必須都是非負實數 ($a \ge 0, b \ge 0$)</button>
+                        <button onclick="checkQ2(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(C) 任意實數都可以使用</button>
+                    </div>
+                    <div id="q2-feedback" class="mt-3 hidden p-3 rounded-md text-sm font-medium"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+
+        function checkQ1(btn, isCorrect) {
+            const feedback = document.getElementById('q1-feedback');
+            feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            if(isCorrect) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = "🎉 答對了！因為 $\\frac{a+b}{2} \\ge \\sqrt{ab} \\Rightarrow \\frac{12}{2} \\ge \\sqrt{ab} \\Rightarrow 6 \\ge \\sqrt{ab}$，兩邊平方得到 $ab \\le 36$。最大值為 36！";
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = "❌ 再想想看哦！套用算幾不等式：$\\frac{a+b}{2} \\ge \\sqrt{ab}$，將 $a+b=12$ 代入看看！";
+            }
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(feedback, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        }
+
+        function checkQ2(btn, isCorrect) {
+            const feedback = document.getElementById('q2-feedback');
+            feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            if(isCorrect) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = "🎉 太棒了！算幾不等式最關鍵的隱藏陷阱就是：$a, b$ 必須是非負數，否則開根號 $\\sqrt{ab}$ 會出現虛數問題！";
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = "❌ 答錯囉！提示：根號內部的數值在實數範圍下有什麼限制呢？";
+            }
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(feedback, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        }
+    </script>
+</body>
+</html>

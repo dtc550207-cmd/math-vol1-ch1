@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-2 絕對值與數線 - 上課講義</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen pb-16">
+
+    <!-- Header / 板書風格頂欄 -->
+    <header class="bg-slate-900 text-white py-8 px-4 border-b-4 border-indigo-500 shadow-lg">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="bg-indigo-500 text-slate-950 font-bold px-3 py-0.5 rounded text-xs">資深名師授課講義</span>
+                <span class="bg-slate-700 text-slate-200 px-3 py-0.5 rounded text-xs font-medium">SOP 階段四：上課中網頁</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-indigo-300">1-2 絕對值、分區討論與不等式（上課講義）</h1>
+            <p class="mt-2 text-slate-300 text-sm md:text-base">掌握絕對值幾何法 ➔ 分段討論去絕對值 ➔ 參數反求核心技巧</p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 mt-8 space-y-10">
+
+        <!-- 口訣總覽卡 -->
+        <section class="bg-gradient-to-r from-indigo-700 to-slate-900 rounded-2xl p-6 text-white shadow-md">
+            <h2 class="text-xl font-black mb-3 flex items-center">
+                <span class="text-2xl mr-2">🧠</span> 老師畢生教學精華：絕對值雙金光口訣
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white/10 p-4 rounded-xl border border-indigo-400/30">
+                    <h3 class="font-bold text-amber-300 text-lg mb-1">【口訣一】絕對值不等式破解</h3>
+                    <p class="text-sm font-semibold leading-relaxed">
+                        「小於包中間、大於分兩邊；<br>
+                        <span class="text-amber-200">中點為中心、半距設邊界</span>。」
+                    </p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl border border-indigo-400/30">
+                    <h3 class="font-bold text-amber-300 text-lg mb-1">【口訣二】多重絕對值分段討論</h3>
+                    <p class="text-sm font-semibold leading-relaxed">
+                        「找零點、分區間；去絕對值注意正負，<br>
+                        <span class="text-rose-300">算完解要回頭檢！</span>」
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 1: 絕對值不等式與參數反求 -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+            <div class="border-b border-slate-200 pb-4 mb-6">
+                <span class="text-xs font-bold uppercase text-indigo-600 tracking-wider">Topic 1</span>
+                <h2 class="text-2xl font-black text-slate-900 mt-1">絕對值不等式與參數反求（經典段考題）</h2>
+            </div>
+
+            <!-- 觀念要點 -->
+            <div class="bg-indigo-50/70 border-l-4 border-indigo-600 p-4 rounded-r-xl mb-6">
+                <h3 class="font-bold text-indigo-900 mb-2">參數反求公式（中心點與半距離）</h3>
+                <p class="text-sm text-slate-700 leading-relaxed mb-2">
+                    若已知絕對值不等式 $|x - a| \le b$ 的解範圍為 $c \le x \le d$：
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-lg border border-indigo-100">
+                    <div>中心點 $a = \frac{c + d}{2}$ （兩端點加起來除以 2）</div>
+                    <div>半距離 $b = \frac{d - c}{2}$ （大減小除以 2）</div>
+                </div>
+            </div>
+
+            <!-- 經典範例 1 -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="font-bold text-slate-900">【範例 1】龍騰 SUPER/POWER 講義：參數反求題型</span>
+                    <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-1 rounded">高頻考題</span>
+                </div>
+                <p class="text-sm text-slate-800 mb-4">
+                    已知不等式 $|ax + 3| \le b$ 的解為 $-2 \le x \le 8$，求實數 $a, b$ 的值。
+                </p>
+
+                <button onclick="toggleSolution('sol-1')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold transition">
+                    👁️ 點擊展開/隱藏板書解析
+                </button>
+
+                <div id="sol-1" class="hidden mt-4 pt-4 border-t border-slate-300 text-sm space-y-3">
+                    <p class="font-bold text-indigo-700">【板書步驟】</p>
+                    <p>
+                        <strong>第一步：幾何中心法找出中心點與半距離</strong><br>
+                        解的範圍為 $[-2, 8]$：<br>
+                        中心點 $m = \frac{-2 + 8}{2} = 3$； 半距離 $r = \frac{8 - (-2)}{2} = 5$。<br>
+                        因此對應標準不等式可寫成 $|x - 3| \le 5$。
+                    </p>
+                    <p>
+                        <strong>第二步：調整係數對齊原題</strong><br>
+                        觀察題目中 $|ax + 3|$ 的常數項是 $+3$，而我們的式子內部是 $-3$。<br>
+                        將 $|x - 3| \le 5$ 兩邊同乘以 $|-1|$：<br>
+                        $|(-1) \cdot (x - 3)| \le 5 \times 1 \Rightarrow |-x + 3| \le 5$。<br>
+                        對比 $|ax + 3| \le b$，即可對照出 <strong class="text-indigo-600">$a = -1, b = 5$</strong>！
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 2: 多重絕對值與分段討論法 -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+            <div class="border-b border-slate-200 pb-4 mb-6">
+                <span class="text-xs font-bold uppercase text-indigo-600 tracking-wider">Topic 2</span>
+                <h2 class="text-2xl font-black text-slate-900 mt-1">分區討論法（處理多重絕對值）</h2>
+            </div>
+
+            <!-- 易錯陷阱卡 -->
+            <div class="bg-rose-50 border border-rose-200 rounded-xl p-4 mb-6">
+                <div class="flex items-center text-rose-800 font-bold mb-2">
+                    <span class="mr-2">⚠️</span> 老師提示：學生常見易錯陷阱！
+                </div>
+                <p class="text-sm text-rose-900 leading-relaxed">
+                    在分段討論算出 $x$ 的解之後，<strong>一定要檢查這個解是否有落在該區段的「假設條件」內</strong>！若算出來的解不在該範圍內，屬於「無效解（增根）」，必須嚴格捨去！
+                </p>
+            </div>
+
+            <!-- 經典範例 2 -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="font-bold text-slate-900">【範例 2】南一講義 / 段考經典題：雙重絕對值方程式</span>
+                    <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2 py-1 rounded">必考大題</span>
+                </div>
+                <p class="text-sm text-slate-800 mb-4">
+                    解方程式 $|x - 1| + |x - 3| = 6$。
+                </p>
+
+                <button onclick="toggleSolution('sol-2')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold transition">
+                    👁️ 點擊展開/隱藏板書解析
+                </button>
+
+                <div id="sol-2" class="hidden mt-4 pt-4 border-t border-slate-300 text-sm space-y-3">
+                    <p class="font-bold text-indigo-700">【板書步驟】</p>
+                    <p>零點為 $x = 1$ 與 $x = 3$，將數線分成三個區間進行討論：</p>
+                    <p>
+                        <strong>① 當 $x \ge 3$ 時：</strong><br>
+                        兩式皆正，去絕對值不變號：$(x - 1) + (x - 3) = 6 \Rightarrow 2x - 4 = 6 \Rightarrow x = 5$。<br>
+                        <span class="text-emerald-600 font-bold">驗證：$5 \ge 3$（符合範圍，為有效解）。</span>
+                    </p>
+                    <p>
+                        <strong>② 當 $1 \le x < 3$ 時：</strong><br>
+                        前正後負：$(x - 1) - (x - 3) = 6 \Rightarrow 2 = 6$（矛盾，此區間無解）。
+                    </p>
+                    <p>
+                        <strong>③ 當 $x < 1$ 時：</strong><br>
+                        兩式皆負，去絕對值加負號：$-(x - 1) - (x - 3) = 6 \Rightarrow -2x + 4 = 6 \Rightarrow x = -1$。<br>
+                        <span class="text-emerald-600 font-bold">驗證：$-1 < 1$（符合範圍，為有效解）。</span>
+                    </p>
+                    <p class="bg-emerald-50 p-3 rounded border border-emerald-200 text-emerald-900 font-bold">
+                        綜合以上討論，原方程式的實數解為 $x = 5$ 或 $x = -1$。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 經典範例 3：進階題 -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="font-bold text-slate-900">【範例 3】龍騰版進階補充（武陵/屏女考題）：整數離散性應用</span>
+                    <span class="text-xs bg-purple-100 text-purple-800 font-bold px-2 py-1 rounded">素養挑戰題</span>
+                </div>
+                <p class="text-sm text-slate-800 mb-4">
+                    求滿足 $3|a + 1| + 2|b - 3| = 2$ 的整數序對 $(a, b)$ 共有幾組？
+                </p>
+
+                <button onclick="toggleSolution('sol-3')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold transition">
+                    👁️ 點擊展開/隱藏板書解析
+                </button>
+
+                <div id="sol-3" class="hidden mt-4 pt-4 border-t border-slate-300 text-sm space-y-3">
+                    <p class="font-bold text-indigo-700">【板書步驟】</p>
+                    <p>
+                        <strong>破題關鍵：</strong> 因為 $a, b$ 為整數，所以 $|a+1|$ 與 $|b-3|$ 必為「非負整數」（即 $0, 1, 2, 3, \dots$）。
+                    </p>
+                    <p>
+                        觀察 $3|a+1|$ 的可能值：<br>
+                        若 $|a+1| \ge 1$，則 $3|a+1| \ge 3$，但原式等號右邊只有 $2$，矛盾！<br>
+                        因此 $|a+1|$ <strong class="text-indigo-600">只能為 $0$</strong>。
+                    </p>
+                    <p>
+                        代回原式：$3(0) + 2|b-3| = 2 \Rightarrow 2|b-3| = 2 \Rightarrow |b-3| = 1$。
+                    </p>
+                    <p>
+                        • 由 $|a+1| = 0 \Rightarrow a = -1$。<br>
+                        • 由 $|b-3| = 1 \Rightarrow b-3 = 1$ 或 $b-3 = -1 \Rightarrow b = 4$ 或 $b = 2$。
+                    </p>
+                    <p class="bg-purple-50 p-3 rounded border border-purple-200 text-purple-950 font-bold">
+                        故整數序對 $(a, b)$ 為 $(-1, 4)$ 與 $(-1, 2)$，共 2 組！
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 隨堂即時練習 -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center mr-3 text-base">練</span>
+                課堂隨堂實戰練習 (點擊選項檢驗)
+            </h2>
+
+            <div class="space-y-6">
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="font-bold text-slate-800 mb-3">
+                        隨堂練習 1：解不等式 $|2x - 1| > 5$ 的解範圍為何？
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <button onclick="checkPractice(this, false, 'p1')" class="p-3 bg-white border border-slate-300 rounded-lg text-left hover:bg-slate-100 transition">(A) $-2 < x < 3$</button>
+                        <button onclick="checkPractice(this, true, 'p1')" class="p-3 bg-white border border-slate-300 rounded-lg text-left hover:bg-slate-100 transition">(B) $x > 3$ 或 $x < -2$</button>
+                        <button onclick="checkPractice(this, false, 'p1')" class="p-3 bg-white border border-slate-300 rounded-lg text-left hover:bg-slate-100 transition">(C) $x > 3$</button>
+                    </div>
+                    <div id="p1-feedback" class="mt-3 hidden p-3 rounded-lg text-sm font-medium"></div>
+                </div>
+
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="font-bold text-slate-800 mb-3">
+                        隨堂練習 2：若 $|x + 1| + |x - 3| = k$ 恆無實數解，則實數 $k$ 的範圍為何？
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <button onclick="checkPractice(this, true, 'p2')" class="p-3 bg-white border border-slate-300 rounded-lg text-left hover:bg-slate-100 transition">(A) $k < 4$</button>
+                        <button onclick="checkPractice(this, false, 'p2')" class="p-3 bg-white border border-slate-300 rounded-lg text-left hover:bg-slate-100 transition">(B) $k \ge 4$</button>
+                        <button onclick="checkPractice(this, false, 'p2')" class="p-3 bg-white border border-slate-300 rounded-lg text-left hover:bg-slate-100 transition">(C) $k \le 2$</button>
+                    </div>
+                    <div id="p2-feedback" class="mt-3 hidden p-3 rounded-lg text-sm font-medium"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+
+        function toggleSolution(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                if (typeof renderMathInElement === 'function') {
+                    renderMathInElement(el, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}] });
+                }
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        function checkPractice(btn, isCorrect, targetId) {
+            const feedback = document.getElementById(targetId + '-feedback');
+            feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            
+            if (targetId === 'p1') {
+                if (isCorrect) {
+                    feedback.classList.add('bg-green-100', 'text-green-800');
+                    feedback.innerHTML = "🎉 答對了！記住口訣『大於分兩邊』：$2x - 1 > 5 \\Rightarrow x > 3$，或 $2x - 1 < -5 \\Rightarrow x < -2$！";
+                } else {
+                    feedback.classList.add('bg-red-100', 'text-red-800');
+                    feedback.innerHTML = "❌ 再算一次哦！套用口訣『大於分兩邊』：$2x-1 > 5$ 或 $2x-1 < -5$！";
+                }
+            } else if (targetId === 'p2') {
+                if (isCorrect) {
+                    feedback.classList.add('bg-green-100', 'text-green-800');
+                    feedback.innerHTML = "🎉 觀念很棒！由三角不等式 $|x+1|+|x-3| \\ge |(x+1)-(x-3)| = 4$，最小值為 4。若要『無解』，則 $k < 4$！";
+                } else {
+                    feedback.classList.add('bg-red-100', 'text-red-800');
+                    feedback.innerHTML = "❌ 提示：用三角不等式算算出 $|x+1|+|x-3|$ 的最小值是多少呢？";
+                }
+            }
+
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(feedback, { delimiters: [{left: '$', right: '$', display: false}] });
+            }
+        }
+    </script>
+</body>
+</html>

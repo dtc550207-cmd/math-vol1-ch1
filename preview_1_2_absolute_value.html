@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-2 絕對值與數線 - 課前預習教案</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen pb-12">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-700 text-white py-8 px-4 shadow-md">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-3 mb-2">
+                <span class="bg-indigo-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">高一數學第一冊</span>
+                <span class="bg-indigo-900 text-xs font-semibold px-3 py-1 rounded-full">SOP 階段三：課前預習網頁</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold">1-2 課前預習：絕對值與數線</h1>
+            <p class="mt-2 text-indigo-100 text-lg">目標：建立「絕對值即距離」直覺，並理解數線上分點公式的幾何意義！</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 mt-8 space-y-8">
+
+        <!-- 1. 生活情境引入 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">1</span>
+                生活思考題：距離永遠是正的！
+            </h2>
+            <div class="prose max-w-none text-slate-700 leading-relaxed">
+                <p>假設東西向的街道是一條數線，學校位於坐標 $0$ 的位置，小明家在學校東邊 $3$ 公里（坐標 $+3$），小華家在學校西邊 $5$ 公里（坐標 $-5$）。</p>
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-md my-4">
+                    <p class="font-medium text-amber-900">🤔 想想看：小明家到小華家的「距離」是多少公里？我們會說是 $-8$ 公里還是 $8$ 公里呢？</p>
+                </div>
+                <p>答案是 <strong class="text-indigo-600 font-bold">8 公里</strong>！因為「距離」永遠是正數或 0，這就是為什麼我們需要使用 <strong class="text-indigo-700">絕對值 $|x|$</strong> 的概念！</p>
+            </div>
+        </section>
+
+        <!-- 2. 精準 SVG 幾何圖形：數線與距離 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">2</span>
+                幾何圖形：數線上兩點間的距離與分點
+            </h2>
+            <p class="text-slate-600 mb-6">
+                在數線上，點 $A(a)$ 與點 $B(b)$ 之間的距離為 <strong class="text-indigo-600 font-semibold">$d(A, B) = |a - b|$</strong>。
+                若 $P(x)$ 為 $\overline{AB}$ 上滿足 $\overline{AP}:\overline{PB} = 3:2$ 的內分點，可利用「交叉相乘」的分點公式求出 $x$。
+            </p>
+
+            <!-- SVG 數線圖 -->
+            <div class="bg-slate-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-inner">
+                <svg viewBox="0 0 500 180" class="w-full max-w-lg">
+                    <!-- 主數線軸 -->
+                    <line x1="30" y1="100" x2="470" y2="100" stroke="#94a3b8" stroke-width="3" />
+                    <!-- 數線箭頭 -->
+                    <polygon points="470,95 482,100 470,105" fill="#94a3b8" />
+
+                    <!-- 刻度與點 -->
+                    <!-- Point A (x=80) -> a = -2 -->
+                    <line x1="80" y1="90" x2="80" y2="110" stroke="#38bdf8" stroke-width="3"/>
+                    <circle cx="80" cy="100" r="5" fill="#38bdf8"/>
+                    
+                    <!-- Point P (x=260) -> 內分點 x (3:2) -->
+                    <circle cx="260" cy="100" r="6" fill="#f59e0b"/>
+
+                    <!-- Point B (x=380) -> b = 8 -->
+                    <line x1="380" y1="90" x2="380" y2="110" stroke="#38bdf8" stroke-width="3"/>
+                    <circle cx="380" cy="100" r="5" fill="#38bdf8"/>
+
+                    <!-- 文字標籤 -->
+                    <text x="70" y="135" fill="#38bdf8" font-size="14" font-weight="bold">A (-2)</text>
+                    <text x="250" y="135" fill="#f59e0b" font-size="14" font-weight="bold">P (x)</text>
+                    <text x="370" y="135" fill="#38bdf8" font-size="14" font-weight="bold">B (8)</text>
+
+                    <!-- 比例線條弧度與標註 -->
+                    <!-- AP 弧線 -->
+                    <path d="M 80 85 Q 170 50 260 85" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
+                    <text x="165" y="55" fill="#f59e0b" font-size="13" font-weight="bold">比例 3</text>
+
+                    <!-- PB 弧線 -->
+                    <path d="M 260 85 Q 320 60 380 85" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
+                    <text x="315" y="62" fill="#f59e0b" font-size="13" font-weight="bold">比例 2</text>
+
+                    <!-- 總距離線 -->
+                    <line x1="80" y1="25" x2="380" y2="25" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3"/>
+                    <text x="180" y="20" fill="#cbd5e1" font-size="12">總距離 |8 - (-2)| = 10</text>
+                </svg>
+                <p class="text-xs text-slate-400 mt-2">（分點公式：$x = \frac{2 \times (-2) + 3 \times 8}{3 + 2} = \frac{-4 + 24}{5} = 4$）</p>
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-100">
+                    <span class="text-indigo-800 font-bold block mb-1">絕對值幾何意義</span>
+                    <p class="text-indigo-950 text-xl font-black">$|a - b|$</p>
+                    <p class="text-indigo-700 text-xs mt-1">代表數線上點 $a$ 與點 $b$ 之間的距離（必為 $\ge 0$）</p>
+                </div>
+                <div class="p-4 bg-amber-50 rounded-lg border border-amber-100">
+                    <span class="text-amber-800 font-bold block mb-1">內分點公式</span>
+                    <p class="text-amber-950 text-xl font-black">$x = \frac{na + mb}{m + n}$</p>
+                    <p class="text-amber-700 text-xs mt-1">「交叉相乘」：$m$ 乘以對面的 $b$，$n$ 乘以對面的 $a$</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 預習自我檢測 -->
+        <section class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center mr-3 font-black">3</span>
+                課前觀念微測驗（選選看）
+            </h2>
+
+            <div class="space-y-6">
+                <!-- 題目一 -->
+                <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                    <p class="font-semibold text-slate-800">Q1. 數線上兩點 $A(-3)$ 與 $B(7)$，請問這兩點之間的距離 $|A - B|$ 是多少？</p>
+                    <div class="mt-3 space-y-2">
+                        <button onclick="checkQ1(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(A) 4</button>
+                        <button onclick="checkQ1(this, true)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(B) 10</button>
+                        <button onclick="checkQ1(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(C) -10</button>
+                    </div>
+                    <div id="q1-feedback" class="mt-3 hidden p-3 rounded-md text-sm font-medium"></div>
+                </div>
+
+                <!-- 題目二 -->
+                <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                    <p class="font-semibold text-slate-800">Q2. 不等式 $|x - 3| \le 2$ 在幾何上的意思是「$x$ 到 $3$ 的距離不超過 $2$」，請問 $x$ 的範圍是？</p>
+                    <div class="mt-3 space-y-2">
+                        <button onclick="checkQ2(this, true)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(A) $1 \le x \le 5$</button>
+                        <button onclick="checkQ2(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(B) $-2 \le x \le 2$</button>
+                        <button onclick="checkQ2(this, false)" class="w-full text-left p-3 rounded-md bg-white border hover:bg-slate-100 transition">(C) $x \ge 5$ 或 $x \le 1$</button>
+                    </div>
+                    <div id="q2-feedback" class="mt-3 hidden p-3 rounded-md text-sm font-medium"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+
+        function checkQ1(btn, isCorrect) {
+            const feedback = document.getElementById('q1-feedback');
+            feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            if(isCorrect) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = "🎉 答對了！距離為 $|7 - (-3)| = |7 + 3| = 10$。距離永遠是大數減小數！";
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = "❌ 再想想看！距離計算公式是 $|b - a|$，要把減號連同 $-3$ 一起算哦：$|7 - (-3)|$！";
+            }
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(feedback, { delimiters: [{left: '$', right: '$', display: false}] });
+            }
+        }
+
+        function checkQ2(btn, isCorrect) {
+            const feedback = document.getElementById('q2-feedback');
+            feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            if(isCorrect) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = "🎉 太棒了！中心點是 $3$，往右加 $2$ 得到 $5$，往左減 $2$ 得到 $1$，所以 $1 \\le x \\le 5$！";
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = "❌ 提示：從 $3$ 這個點向左向右各移動 $2$ 個單位，會到達哪兩個點呢？";
+            }
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(feedback, { delimiters: [{left: '$', right: '$', display: false}] });
+            }
+        }
+    </script>
+</body>
+</html>
